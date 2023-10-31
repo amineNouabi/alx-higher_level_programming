@@ -6,8 +6,8 @@ bobo = False
 for ch in range(ord("z"), ord("a") - 1, -1):
 	to = ch
 	if bobo:
-		to = chr(ch - delta)
+		to = ch - delta
 	else:
-		to = chr(ch)
+		to = ch
 	bobo = not bobo
-	print("{}".format(to), end="")
+	print("{}".format(chr(to)), end="")
