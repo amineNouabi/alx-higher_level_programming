@@ -12,5 +12,5 @@ def uppercase(str):
         to_print = ch
         if islower(ch):
             to_print = chr(ord(ch) - delta)
-        print(to_print, end="")
-    print()
+        print("{}".format(to_print), end="")
+    print("".format())
