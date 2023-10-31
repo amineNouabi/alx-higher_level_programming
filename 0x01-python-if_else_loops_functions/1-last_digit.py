@@ -8,9 +8,9 @@ number_copy = number
 
 if number < 0:
     sign = -1
-    number *= -1
+    number_copy *= -1
 
-while number > 0:
+while number_copy > 0:
     digit = number_copy % 10
     number_copy //= 10
 digit *= sign
