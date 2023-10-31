@@ -10,4 +10,4 @@ for ch in range(ord("z"), ord("a") - 1, -1):
 	else:
 		to = chr(ch)
 	bobo = not bobo
-	print(to, end="")
+	print("{}".format(to), end="")
