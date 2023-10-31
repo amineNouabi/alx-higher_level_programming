@@ -9,8 +9,8 @@ def islower(c):
 def uppercase(s):
     delta = ord('a') - ord('A')
     for ch in s:
-        to_print = ch
+        to_to = ch
         if islower(ch):
-            to_print = chr(ord(ch) - delta)
-        print("{}".format(to_print), end="")
+            to_to = chr(ord(ch) - delta)
+        print("{}".format(to_to), end="")
     print("".format())
