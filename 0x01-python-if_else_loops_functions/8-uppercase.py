@@ -6,9 +6,9 @@ def islower(c):
     return False
 
 
-def uppercase(str):
+def uppercase(s):
     delta = ord('a') - ord('A')
-    for ch in str:
+    for ch in s:
         to_print = ch
         if islower(ch):
             to_print = chr(ord(ch) - delta)
