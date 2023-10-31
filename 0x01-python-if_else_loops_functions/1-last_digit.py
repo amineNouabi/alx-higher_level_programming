@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 import random
-number = int(random.randint(-10000, 10000))
+number = random.randint(-10000, 10000)
 
 sign = 1
 digit = 0
+number_copy = number
 
 if number < 0:
     sign = -1
     number *= -1
 
 while number > 0:
-    digit = number % 10
-    number /= 10
+    digit = number_copy % 10
+    number_copy //= 10
 digit *= sign
 
 print(f'Last digit of { number } is { digit }', end=" ")
