@@ -11,7 +11,7 @@ if number < 0:
 
 digit = (number % 10) * sign
 
-print(f'Last digit of { number } is { digit }', end=" ")
+print(f'Last digit of { number * sign } is { digit }', end=" ")
 
 if digit > 5:
     print("and is greater than 5")
