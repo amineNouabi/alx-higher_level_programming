@@ -4,16 +4,12 @@ number = random.randint(-10000, 10000)
 
 sign = 1
 digit = 0
-number_copy = number
 
 if number < 0:
     sign = -1
-    number_copy *= -1
+    number *= -1
 
-while number_copy > 0:
-    digit = number_copy % 10
-    number_copy //= 10
-digit *= sign
+digit = (number % 10) * sign
 
 print(f'Last digit of { number } is { digit }', end=" ")
 
