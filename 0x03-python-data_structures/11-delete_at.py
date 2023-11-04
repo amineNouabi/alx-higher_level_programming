@@ -7,4 +7,5 @@ def delete_at(my_list=[], idx=0):
             if i == idx:
                 continue
             my_list.append(copy[i])
-    return my_list
+        return my_list
+    return copy
