@@ -3,28 +3,29 @@
 #include <stdio.h>
 
 /**
- * add_nodeint - adds a new node at the beginning of a listint_t list
+ * reverse_listint - reverses a listint_t linked list
  * @head: pointer to the head of the list
- * @n: integer to add to the list
  *
- * Return: the address of the new element, or NULL if it failed
+ * Return: a pointer to the first node of the reversed list
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *new_node = 0;
+	listint_t *prev;
+	listint_t *next;
 
-	if (!head)
-		return (0);
+	prev = 0;
+	next = 0;
 
-	new_node = malloc(sizeof(listint_t));
-	if (!new_node)
-		return (0);
+	while (*head)
+	{
+		next = (*head)->next;
+		(*head)->next = prev;
+		prev = *head;
+		*head = next;
+	}
 
-	new_node->n = n;
-	new_node->next = *head;
-	*head = new_node;
-
-	return (new_node);
+	*head = prev;
+	return (prev);
 }
 
 /**
@@ -35,32 +36,33 @@ listint_t *add_nodeint(listint_t **head, const int n)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *cursor, *reversed_list, *cursor_rev;
+	listint_t *slow, *cursor, *fast, *reversed_list;
 	int is_palindrome = 1;
 
 	if (!head)
 		return (0);
 	if (!*head)
 		return (1);
-	reversed_list = 0;
-	cursor = *head;
-	while (cursor)
+	cursor = slow = fast = *head;
+	while (fast && fast->next)
 	{
-		add_nodeint(&reversed_list, cursor->n);
-		cursor = cursor->next;
+		fast = fast->next->next;
+		slow = slow->next;
 	}
-	cursor = *head;
-	cursor_rev = reversed_list;
-	while (cursor && cursor_rev)
+	if (fast)
+		slow = slow->next;
+
+	reversed_list = reverse_listint(&slow);
+	while (slow)
 	{
-		if (cursor->n != cursor_rev->n)
+		if (slow->n != cursor->n)
 		{
 			is_palindrome = 0;
 			break;
 		}
+		slow = slow->next;
 		cursor = cursor->next;
-		cursor_rev = cursor_rev->next;
 	}
-	free_listint(reversed_list);
+	reverse_listint(&reversed_list);
 	return (is_palindrome);
 }
