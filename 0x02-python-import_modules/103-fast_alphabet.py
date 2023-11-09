@@ -1,2 +1,2 @@
-#!/usr/bin/python3
-__import__("os").system("echo ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+import string
+print(*(list(string.ascii_uppercase)[:26]), sep='')
