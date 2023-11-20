@@ -47,7 +47,7 @@ void print_python_bytes(PyObject *p)
 
 	size = ((PyVarObject *)p)->ob_size;
 	printf("[*] Size of the Python Bytes = %ld\n", size);
-	printf("[*] First 10 bytes: ");
+	printf("[*] First %d bytes: ", size < 10 ? (int)size + 1 : 10);
 
 	for (i = 0; i < size && i < 10; i++)
 	{
