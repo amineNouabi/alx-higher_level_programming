@@ -29,7 +29,7 @@ class Square:
     @property
     def size(self) -> int:
         """Get the size of the square"""
-        return (self.__size)
+        return self.__size
 
     @size.setter
     def size(self, value: int) -> None:
@@ -47,7 +47,7 @@ class Square:
     @property
     def position(self) -> tuple:
         """Get the position of the square"""
-        return (self.__position)
+        return self.__position
 
     @position.setter
     def position(self, value: tuple) -> None:
@@ -70,7 +70,7 @@ class Square:
         """
         return self.__size ** 2
 
-    def my_print(self):
+    def my_print(self) -> None:
         """Prints the square with the character #"""
         if self.size == 0:
             print()
