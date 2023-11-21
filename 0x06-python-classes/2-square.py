@@ -3,13 +3,19 @@
 
 
 class Square:
-    """class Square that defines a square"""
+    """class Square that defines a square
+
+    Attributes:
+         __size (int): positive integer.
+
+    """
 
     def __init__(self, size=0) -> None:
         """ Init a new square.
 
         Args:
             size (int): size of the new square.
+
         """
 
         if not isinstance(size, int):
