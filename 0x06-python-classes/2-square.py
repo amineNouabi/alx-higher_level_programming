@@ -3,12 +3,16 @@
 
 
 class Square:
-    """Empty class Square that defines a square"""
+    """class Square that defines a square"""
 
     def __init__(self, size=0) -> None:
-        """Initializes the data"""
+        """ Init a new square.
 
-        if type(size) != int:
+        Args:
+            size (int): size of the new square.
+        """
+
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >=0")
