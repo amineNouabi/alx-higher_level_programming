@@ -53,9 +53,11 @@ class SinglyLinkedList:
     """
 
     def __init__(self):
+        """Init a new SinglyLinkedList"""
         self.__head = None
 
     def __str__(self):
+        """Returns string respresentation of LinkedList"""
         seperator = "\n"
 
         str_rep = ""
