@@ -6,15 +6,15 @@ class Square:
     """class Square that defines a square
 
     Attributes:
-         __size (int): positive integer.
+        size (int): positive integer.
 
     """
 
-    def __init__(self, size=0) -> None:
+    def __init__(self, size=0):
         """ Init a new square.
 
         Args:
-            size (int): size of the new square.
+            size (int): size of the new square defaults to 0.
 
         """
 
