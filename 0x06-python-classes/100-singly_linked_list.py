@@ -24,7 +24,11 @@ class Node:
 
     @property
     def data(self):
-        """Get/Set Node's data"""
+        """Get/Set Node's data
+
+        Raises:
+            TypeError: data must be an integer.
+        """
         return self.__data
 
     @data.setter
@@ -35,7 +39,11 @@ class Node:
 
     @property
     def next_node(self):
-        """Get/Set Node's next"""
+        """Get/Set Node's next node
+
+        Raises:
+            TypeError: next_node must be a Node object.
+        """
         return self.__next_node
 
     @next_node.setter
