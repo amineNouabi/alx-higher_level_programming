@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a class SinglyLinkedList"""
+"""This module defines Node and SinglyLinkedList classes"""
 
 
 class Node:
@@ -16,7 +16,7 @@ class Node:
 
         Args:
             data (int): value of the node
-            next_node (Node or None): Next node
+            next_node (Node or None): Next node defaults to None
         """
 
         self.data = data
@@ -57,7 +57,11 @@ class SinglyLinkedList:
         self.__head = None
 
     def __str__(self):
-        """Returns string respresentation of LinkedList"""
+        """Get string respresentation of SinglyLinkedList
+
+        Returns:
+            String representation of SinglyLinkedList
+        """
         seperator = "\n"
 
         str_rep = ""
