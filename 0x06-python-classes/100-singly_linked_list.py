@@ -54,22 +54,14 @@ class Node:
 
 
 class SinglyLinkedList:
-    """class that defines defines a singly linked list
-
-    Attributes:
-        head (Node): head of the linked list.
-    """
+    """class that defines defines a singly linked list"""
 
     def __init__(self):
         """Init a new SinglyLinkedList"""
         self.__head = None
 
     def __str__(self):
-        """Get string respresentation of SinglyLinkedList
-
-        Returns:
-            String representation of SinglyLinkedList
-        """
+        """Get string respresentation of SinglyLinkedList"""
         seperator = "\n"
 
         str_rep = ""
@@ -82,7 +74,7 @@ class SinglyLinkedList:
         return str_rep
 
     def sorted_insert(self, value):
-        """ Insert new node in right place ascending order
+        """Insert new node in right place ascending order
 
         Args:
             value (int): data of new node
