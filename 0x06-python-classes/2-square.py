@@ -7,7 +7,6 @@ class Square:
 
     Attributes:
         size (int): positive integer.
-
     """
 
     def __init__(self, size=0):
@@ -16,6 +15,9 @@ class Square:
         Args:
             size (int): size of the new square defaults to 0.
 
+        Raises:
+            TypeError - size munt be integer.
+            ValueError - size must be >= 0.
         """
 
         if not isinstance(size, int):
