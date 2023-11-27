@@ -12,7 +12,6 @@ class Rectangle:
     Attributes:
         height (int): Rectangle height.
         width (int): Rectangle width.
-        number_of_instances (int): Static attribute to count instances from Rectangle class.
     """
 
     number_of_instances = 0
