@@ -29,7 +29,7 @@ class Rectangle:
         """
         self.height = height
         self.width = width
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """Rectangle to String.
@@ -57,7 +57,7 @@ class Rectangle:
     def __del__(self):
         """Rectangle Destructor"""
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
