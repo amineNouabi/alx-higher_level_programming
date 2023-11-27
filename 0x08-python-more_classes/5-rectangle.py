@@ -10,8 +10,8 @@ class Rectangle:
     """Rectangle Class Definition
 
     Arguments:
-        __height (int): Rectangle height.
-        __width (int): Rectangle width.
+        height (int): Rectangle height.
+        width (int): Rectangle width.
     """
 
     def __init__(self, width=0, height=0):
@@ -28,7 +28,7 @@ class Rectangle:
         self.height = height
         self.width = width
 
-    def __str__(self) -> str:
+    def __str__(self):
         """Rectangle to String.
 
         Returns:
@@ -45,13 +45,15 @@ class Rectangle:
             str = "{}{}{}".format(str, "#" * self.width, delimiter)
         return (str)
 
-    def __repr__(self) -> str:
-        """Rectangle to String that can be used with eval to create objects.
+    def __repr__(self):
+        """Rectangle to String that can be used with eval to create objects"""
 
-        Returns:
-           str: String representaion that can be used to create an object with eval.
-        """
-        return ("Rectangle({}, {})".format(self.width, self.height))
+        str = "Rectangle({}, {})".format(self.width, self.height)
+        return str
+
+    def __del__(self):
+        """Rectangle Destructor"""
+        print("Bye rectangle...")
 
     @property
     def width(self):
@@ -63,7 +65,7 @@ class Rectangle:
         """Setter for width attribute
 
         Args:
-            value (int): new width
+            value (int): new width.
 
         Raises:
             TypeError: if width is not an integer.
