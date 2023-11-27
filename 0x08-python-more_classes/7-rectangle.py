@@ -12,10 +12,10 @@ class Rectangle:
     Attributes:
         height (int): Rectangle height.
         width (int): Rectangle width.
+        print_symbol (any): symbol to be repeated when representing rectancle in a string.
     """
 
     number_of_instances = 0
-    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initilize a new rectangle
@@ -30,6 +30,7 @@ class Rectangle:
         """
         self.height = height
         self.width = width
+        self.print_symbol = "#"
         Rectangle.number_of_instances += 1
 
     def __str__(self):
@@ -47,7 +48,7 @@ class Rectangle:
             if i == self.height - 1:
                 delimiter = ""
             str = "{}{}{}".format(
-                str, Rectangle.print_symbol * self.width, delimiter)
+                str, self.print_symbol * self.width, delimiter)
         return (str)
 
     def __repr__(self):
