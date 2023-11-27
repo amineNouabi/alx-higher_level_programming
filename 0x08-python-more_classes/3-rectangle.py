@@ -36,6 +36,9 @@ class Rectangle:
         """
         delimiter = "\n"
         str = ""
+
+        if not self.height or not self.width:
+            return (str)
         for i in range(self.height):
             if i == self.height - 1:
                 delimiter = ""
