@@ -51,7 +51,8 @@ class Rectangle:
         Returns:
            str: String representaion that can be used to create an object with eval.
         """
-        return ("Rectangle({}, {})".format(self.width, self.height))
+        str = "Rectangle({}, {})".format(self.width, self.height)
+        return (str)
 
     @property
     def width(self):
