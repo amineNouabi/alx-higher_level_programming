@@ -14,7 +14,7 @@ class Rectangle:
         __width (int): Rectangle width.
     """
 
-    def __init__(self, width=0, height=0) -> None:
+    def __init__(self, width=0, height=0):
         """Initilize a new rectangle
 
         Args:
@@ -45,13 +45,21 @@ class Rectangle:
             str = "{}{}{}".format(str, "#" * self.width, delimiter)
         return (str)
 
+    def __repr__(self) -> str:
+        """Rectangle to String that can be used with eval to create objects.
+
+        Returns:
+           str: String representaion that can be used to create an object with eval.
+        """
+        return ("Rectangle({}, {})".format(self.width, self.height))
+
     @property
-    def width(self) -> int:
+    def width(self):
         """Getter for width proprety"""
         return (self.__width)
 
     @width.setter
-    def width(self, value) -> None:
+    def width(self, value):
         """Setter for width attribute
 
         Args:
