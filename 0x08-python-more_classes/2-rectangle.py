@@ -80,11 +80,11 @@ class Rectangle:
         """
         return (self.height * self.width)
 
-    def perimetre(self):
-        """Calculates Rectangle Perimetre.
+    def perimeter(self):
+        """Calculates Rectangle Perimeter.
 
           Returns:
-              Perimetre of the square self.
+              Perimeter of the square self.
         """
         if not self.height or not self.width:
             return (0)
