@@ -28,7 +28,7 @@ class Rectangle:
         self.height = height
         self.width = width
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Rectangle to String.
 
         Returns:
@@ -45,7 +45,7 @@ class Rectangle:
             str = "{}{}{}".format(str, "#" * self.width, delimiter)
         return (str)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Rectangle to String that can be used with eval to create objects.
 
         Returns:

@@ -14,7 +14,7 @@ class Rectangle:
         __width (int): Rectangle width.
     """
 
-    def __init__(self, width=0, height=0) -> None:
+    def __init__(self, width=0, height=0):
         """Initilize a new rectangle
 
         Args:
@@ -28,7 +28,7 @@ class Rectangle:
         self.height = height
         self.width = width
 
-    def __str__(self) -> str:
+    def __str__(self):
         """Rectangle to String.
 
         Returns:
@@ -46,12 +46,12 @@ class Rectangle:
         return (str)
 
     @property
-    def width(self) -> int:
+    def width(self):
         """Getter for width proprety"""
         return (self.__width)
 
     @width.setter
-    def width(self, value) -> None:
+    def width(self, value):
         """Setter for width attribute
 
         Args:
