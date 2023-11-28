@@ -36,19 +36,19 @@ class Rectangle:
         """Rectangle to String.
 
         Returns:
-            str: String representation of rectangle using '#' character.
+            s: String representation of rectangle using '#' character.
         """
         delimiter = "\n"
-        str = ""
+        s = ""
 
         if not self.height or not self.width:
-            return (str)
+            return (s)
         for i in range(self.height):
             if i == self.height - 1:
                 delimiter = ""
-            str = "{}{}{}".format(
-                str, self.print_symbol * self.width, delimiter)
-        return (str)
+            s = "{}{}{}".format(
+                s, str(self.print_symbol) * self.width, delimiter)
+        return (s)
 
     def __repr__(self):
         """Rectangle to String that can be used with eval to create objects"""
