@@ -16,7 +16,7 @@ class Node:
 
         Args:
             data (int): value of the node
-            next_node (Node or None): Next node defaults to None
+            next_node (Node): Next node defaults to None
         """
 
         self.data = data
@@ -24,7 +24,7 @@ class Node:
 
     @property
     def data(self):
-        """Get/Set Node's data
+        """Get Node's data
 
         Raises:
             TypeError: data must be an integer.
@@ -33,6 +33,13 @@ class Node:
 
     @data.setter
     def data(self, value):
+        """Set Node's data
+
+        Args:
+            value (int): data value for node
+        Raises:
+            TypeError: data must be an integer.
+        """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
