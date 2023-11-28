@@ -4,7 +4,7 @@ Module defining copy_list function
 """
 
 
-def copy_list(l: list) -> list:
+def copy_list(l):
     """Copies a list into a new list.
 
     Args:
