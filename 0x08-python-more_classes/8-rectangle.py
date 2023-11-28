@@ -124,7 +124,7 @@ class Rectangle:
         return (2 * (self.height + self.width))
 
     @staticmethod
-    def bigger_or_equal(rect_1: "Rectangle", rect_2: "Rectangle") -> "Rectangle":
+    def bigger_or_equal(rect_1, rect_2):
         """Return the biggest rectangle based on area.
         Args:
             rect_1 (Rectangle): First rectangle.
