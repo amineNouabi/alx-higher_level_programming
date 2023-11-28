@@ -13,6 +13,7 @@ def copy_list(l):
         l (list): list to be copied.
 
     Returns:
-        list: copy of l.
+        copy: copy of l.
     """
-    return ([i for i in l])
+    copy = [i for i in l]
+    return (copy)
