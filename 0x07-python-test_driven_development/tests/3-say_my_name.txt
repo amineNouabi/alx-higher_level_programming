@@ -20,6 +20,10 @@ say_my_name(first_name, last_name="")
     Traceback (most recent call last):
     TypeError: first_name must be a string
 
+    >>> say_my_name("def", {'d': 5})
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
     >>> say_my_name(5, ["Dy"])
     Traceback (most recent call last):
     TypeError: first_name must be a string
