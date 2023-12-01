@@ -3,8 +3,11 @@
 
 This module defines a text-indentation function ``text_indentation(text)``.
 
-Usage
-=====
+Usage:
+
+    ``text_indentation(text)``
+    Where ``text`` is a string.
+
 
     >>> text_indentation = __import__('5-text_indentation').text_indentation
     >>> text_indentation("HAHAHA?")
