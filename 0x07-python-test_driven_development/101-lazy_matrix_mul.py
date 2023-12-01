@@ -8,6 +8,8 @@ Module that defines a function that multiplies 2 matrices by using the module Nu
 
 """
 
+import numpy as np
+
 
 def lazy_matrix_mul(m_a, m_b):
     """Multiplies 2 matrices by using the module NumPy
@@ -19,6 +21,5 @@ def lazy_matrix_mul(m_a, m_b):
     Returns:
             list: new matrix
     """
-    import numpy as np
 
     return np.matmul(m_a, m_b)
