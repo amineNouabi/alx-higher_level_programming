@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 
 """
-
 Module defining text_indentation function
-
 """
 
 
