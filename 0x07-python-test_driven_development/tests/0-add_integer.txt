@@ -33,6 +33,10 @@ This function adds two integers (int or float) together.
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
 
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
     >>> add_integer(4, 5.5)
     9
 
