@@ -19,18 +19,18 @@ def matrix_divided(matrix, div):
         TypeError: div must be a number
         ZeroDivisionError: division by zero
     """
+    matrix_type_error = "matrix must be"
+    matrix_type_error += " a matrix (list of lists) of integers/floats"
+    length = 0
+    m = []
 
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
     if not isinstance(matrix, list) or len(matrix) == 0:
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats")
-    length = 0
-    m = []
+        raise TypeError(matrix_type_error)
     for row in matrix:
         if not isinstance(row, list):
-            raise TypeError(
-                "matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError(matrix_type_error)
         if length == 0:
             length = len(row)
         if len(row) != length:
@@ -38,9 +38,7 @@ def matrix_divided(matrix, div):
         new_row = []
         for cell in row:
             if not isinstance(cell, int) and not isinstance(cell, float):
-                raise TypeError(
-                    "matrix must be a matrix (list of lists) \
-                        of integers/floats")
+                raise TypeError(matrix_type_error)
             new_row.append(round(cell / div, 2))
         m.append(new_row)
     return m
