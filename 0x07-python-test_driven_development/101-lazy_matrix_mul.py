@@ -4,7 +4,8 @@
 
 101-lazy_matrix_mul.py
 
-Module that defines a function that multiplies 2 matrices by using the module NumPy
+Module that defines a function that multiplies 2 matrices
+using the module NumPy
 
 """
 
