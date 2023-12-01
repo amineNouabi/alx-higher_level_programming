@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 
 """
+
 Module defining text_indentation function
+
 """
 
 
 def text_indentation(text):
-    """Prints a text with 2 new lines after each of these characters: ., ? and :
+    """Prints a text with 2 new lines after each of
+        these characters: ., ? and :
 
     Args:
         text (str): text to print.
