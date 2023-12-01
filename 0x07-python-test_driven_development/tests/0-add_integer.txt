@@ -1,10 +1,10 @@
 The ``0-add_integer`` module
-======================
+============================
 
 This module supplies one function, ``add_integer``.
 
 Using ``add_integer``
--------------------
+---------------------
 
 This function adds two integers (int or float) together.
 
@@ -28,6 +28,10 @@ This function adds two integers (int or float) together.
     >>> add_integer(100, "a")
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
 
     >>> add_integer(4, 5.5)
     9
