@@ -16,6 +16,9 @@ Test BaseGeometry class:
     >>> type(bg)
     <class '7-base_geometry.BaseGeometry'>
 
+    >>> bg.__dict__
+    {}
+
     >>> bg = BaseGeometry(None)
     Traceback (most recent call last):
     TypeError: BaseGeometry() takes no arguments
