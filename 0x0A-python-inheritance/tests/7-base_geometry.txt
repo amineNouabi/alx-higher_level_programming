@@ -61,6 +61,7 @@ Test BaseGeometry class:
     Traceback (most recent call last):
     TypeError: [1, 2] must be an integer
 
+    >>> bg.integer_validator([1, 2], 20)
 
 ::
 
