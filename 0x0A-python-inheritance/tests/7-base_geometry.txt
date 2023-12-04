@@ -16,8 +16,12 @@ Test BaseGeometry class:
     >>> type(bg)
     <class '7-base_geometry.BaseGeometry'>
 
-    >>> bg.__dict__
-    {}
+    >>> print(bg) # doctest: +ELLIPSIS
+    <7-base_geometry.BaseGeometry object at...>
+
+    >>> print(bg.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry 
+     object at...>>
 
     >>> bg = BaseGeometry(None)
     Traceback (most recent call last):
