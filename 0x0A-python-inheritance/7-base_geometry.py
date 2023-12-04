@@ -7,14 +7,12 @@ Module defines BaseGeometry class
 
 
 class BaseGeometry:
-    """
-    BaseGeometry class
-    """
+    """BaseGeometry class"""
 
     def area(self):
         """
         Raises an Exception with the message:
-        area() is not implemented
+            area() is not implemented
         """
         raise Exception("area() is not implemented")
 
@@ -30,7 +28,7 @@ class BaseGeometry:
             TypeError: if value is not an integer
             ValueError: if value is less than or equal to 0
         """
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
