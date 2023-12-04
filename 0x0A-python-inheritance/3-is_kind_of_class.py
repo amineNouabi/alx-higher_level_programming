@@ -2,7 +2,7 @@
 
 """
 
-Module defines is_same_class function
+Module defines is_kind_of_class function
 
 """
 
