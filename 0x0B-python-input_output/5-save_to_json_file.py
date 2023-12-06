@@ -1,7 +1,7 @@
 #!/bin/usr/python3
 """
 
-Defines save_to_json_file function
+Defines save_to_json_file function.
 
 """
 
