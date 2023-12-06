@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
 
-Defines a function that inserts a line of text to a file,
-    after each line containing a specific string.
+Defines append_after function.
 
 """
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Inserts a line of text to a file,
-            after each line containing a specific string.
+    """Inserts a line of text to a file given in the filename,
+            after each line containing search_string.
 
     Args:
         filename (str, optional): path to the file. Defaults to "".
