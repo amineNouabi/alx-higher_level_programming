@@ -44,11 +44,11 @@ def main():
             except BaseException:
                 pass
             if line_count % 10 == 0:
-                print_stats(status_codes, file_size)
+                print_stats(file_size)
     except KeyboardInterrupt:
         pass
     finally:
-        print_stats(status_codes, file_size)
+        print_stats(file_size)
 
 
 if __name__ == "__main__":
