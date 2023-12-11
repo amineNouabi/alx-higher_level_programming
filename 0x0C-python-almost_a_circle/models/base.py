@@ -33,7 +33,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Base to json string.
+        """List of dictionaries to JSON
 
         Args:
             list_dictionaries (list): is a list of dictionaries.
@@ -43,7 +43,7 @@ class Base:
         """
         if list_dictionaries is None:
             return "[]"
-        return str(list_dictionaries)
+        return str(list_dictionaries).replace("'", "\"")
 
     @classmethod
     def save_to_file(cls, list_objs):
