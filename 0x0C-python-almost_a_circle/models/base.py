@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 
 Defines Base class.
@@ -61,11 +60,13 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns the list of the JSON string representation 
+        """Returns the list of the JSON string representation.
 
         Args:
-            json_string (string): 
+            json_string (string): haha.
         """
         if json_string is None or not len(json_string):
             return []
-        return list(map(lambda object_string: json.loads(object_string.replace("'", "\"")), json.loads(json_string)))
+        return list(map(
+            lambda object_string: json.loads(object_string.replace("'", "\"")),
+            json.loads(json_string)))
