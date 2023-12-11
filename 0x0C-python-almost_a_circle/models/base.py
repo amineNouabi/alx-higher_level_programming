@@ -94,3 +94,51 @@ class Base:
                 return list(map(lambda d: cls.create(**d), list_dicts))
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves list of objects to csv file.
+
+        Args:
+            list_objs (list): list of squares or rectangles.
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w") as file:
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    file.write("{},{},{},{},{}\n".format(
+                        obj.id, obj.width, obj.height, obj.x, obj.y))
+            else:
+                for obj in list_objs:
+                    file.write("{},{},{},{}\n".format(
+                        obj.id, obj.size, obj.x, obj.y))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads objects attributes from csv file.
+
+        Returns:
+            objs: list of objects created from csv data.
+        """
+        filename = cls.__name__ + ".csv"
+
+        try:
+            with open(filename, "r") as file:
+                file_content = file.read()
+                objs = []
+                if cls.__name__ == "Rectangle":
+                    for line in file_content.split("\n"):
+                        [id, width, height, x, y] = list(
+                            map(lambda x: int(x), line.split(",")))
+                        objs.append(Base.create(
+                            {id: id, width: width, height: height, x: x, y: y}
+                        ))
+                else:
+                    for line in file_content.split("\n"):
+                        [id, size, x, y] = list(
+                            map(lambda x: int(x), line.split(",")))
+                        objs.append(Base.create(
+                            {id: id, size: size, x: x, y: y}))
+                return objs
+        except FileNotFoundError:
+            return []
