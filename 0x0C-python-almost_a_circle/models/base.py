@@ -14,8 +14,7 @@ class Base:
 
     Attributes:
         __nb_objects (int): total number of objects
-        id (int): object ID
-
+        id (int): object ID.
     """
 
     __nb_objects = 0
@@ -38,6 +37,9 @@ class Base:
 
         Args:
             list_dictionaries (list): is a list of dictionaries.
+
+        Returns:
+            JSON string representation of list_dictionaries.
         """
         if list_dictionaries is None:
             return "[]"
