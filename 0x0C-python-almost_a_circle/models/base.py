@@ -52,10 +52,11 @@ class Base:
             list_objs (list): list of objects.
         """
         filename = cls.__name__ + ".json"
-
+        list_dicts = None
         with open(filename, "w") as file:
-            list_dicts = list(map(lambda obj: obj.to_dictionary(),
-                                  list_objs))
+            if list_objs is not None:
+                list_dicts = list(map(lambda obj: obj.to_dictionary(),
+                                      list_objs))
             file.write(Base.to_json_string(list_dicts))
 
     @staticmethod
