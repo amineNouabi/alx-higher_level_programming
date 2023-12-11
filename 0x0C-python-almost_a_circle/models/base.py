@@ -68,6 +68,4 @@ class Base:
         """
         if json_string is None or not len(json_string):
             return []
-        return list(map(
-            lambda object_string: json.loads(object_string.replace("'", "\"")),
-            json.loads(json_string)))
+        return json.loads(json_string)
