@@ -128,17 +128,21 @@ class Base:
                 objs = []
                 if cls.__name__ == "Rectangle":
                     for line in file_content.split("\n"):
+                        if not len(line):
+                            continue
                         [id, width, height, x, y] = list(
                             map(lambda x: int(x), line.split(",")))
-                        objs.append(Base.create(
-                            {id: id, width: width, height: height, x: x, y: y}
-                        ))
+                        dictionary = {"id": id, "width": width,
+                                      "height": height, "x": x, "y": y}
+                        objs.append(cls.create(**dictionary))
                 else:
                     for line in file_content.split("\n"):
+                        if not len(line):
+                            continue
                         [id, size, x, y] = list(
                             map(lambda x: int(x), line.split(",")))
-                        objs.append(Base.create(
-                            {id: id, size: size, x: x, y: y}))
+                        dictionary = {"id": id, "size": size, "x": x, "y": y}
+                        objs.append(cls.create(**dictionary))
                 return objs
         except FileNotFoundError:
             return []
