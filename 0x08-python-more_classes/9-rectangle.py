@@ -10,8 +10,8 @@ class Rectangle:
     """Rectangle Class Definition
 
     Attributes:
-        height (int): Rectangle height.
-        width (int): Rectangle width.
+        number_of_instances (int): The number of Rectangle instances.
+        print_symbol (any): The symbol used for string representation.
     """
 
     number_of_instances = 0
@@ -28,9 +28,9 @@ class Rectangle:
             TypeError: if height or width is not an integer.
             ValueError: if height or width is smaller than 0.
         """
+        type(self).number_of_instances += 1
         self.height = height
         self.width = width
-        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """Rectangle to String.
