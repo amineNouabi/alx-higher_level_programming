@@ -36,7 +36,7 @@ class Rectangle:
         """Rectangle to String.
 
         Returns:
-            String representation of rectangle using '#' character.
+            s: String representation of rectangle using '#' character.
         """
         delimiter = "\n"
         s = ""
@@ -149,5 +149,5 @@ class Rectangle:
         Returns:
             square: new instance of rectangle that satisfies a square.
         """
-        square = cls(size, size)
-        return square
+        square = cls.__init__(size, size)
+        return (square)
