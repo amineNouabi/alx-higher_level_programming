@@ -149,5 +149,5 @@ class Rectangle:
         Returns:
             square: new instance of rectangle that satisfies a square.
         """
-        square = cls.__init__(size, size)
+        square = cls(size, size)
         return (square)
