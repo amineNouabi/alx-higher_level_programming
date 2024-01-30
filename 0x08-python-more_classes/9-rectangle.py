@@ -146,8 +146,5 @@ class Rectangle:
 
         Args:
             size (int, optional): size of square. Defaults to 0.
-        Returns:
-            square: new instance of rectangle that satisfies a square.
         """
-        square = cls(size, size)
-        return (square)
+        return (cls(size, size))
