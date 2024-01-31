@@ -29,8 +29,8 @@ class Rectangle:
             ValueError: if height or width is smaller than 0.
         """
         type(self).number_of_instances += 1
-        self.height = height
         self.width = width
+        self.height = height
 
     def __str__(self):
         """Rectangle to String.
