@@ -15,7 +15,7 @@ class NQueens:
         self.__N = N
         self.solutions = []
 
-    def safe_position(self, position):
+    def safe_position(self, position, board):
         [x, y] = position
 
         # Filter outside the board case
@@ -23,7 +23,7 @@ class NQueens:
             return False
 
         # Filter Queen Attacked by previously played queens.
-        for queen in self.__queens:
+        for queen in board:
             [queen_x, queen_y] = queen
 
             # Attaking queen straight
@@ -46,11 +46,11 @@ class NQueens:
         if column > self.__N:
             return False
 
-        for i in range(self.__N):
-
-            if self.safe_position([i, column]):
-                board.append([i, column])
-                if self.backtrack(board, [i, column + 1]):
+        for row in range(self.__N):
+            position = [row, column]
+            if self.safe_position(position, board):
+                board.append(position)
+                if self.backtrack(board, [row, column + 1]):
                     return True
                 board.pop()
 
