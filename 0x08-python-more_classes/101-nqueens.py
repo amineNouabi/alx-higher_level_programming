@@ -16,10 +16,19 @@ class NQueens:
         self.solutions = []
 
     def safe_position(self, position, board):
+        """Determines if a position is safe to place a queen.
+
+        Args:
+            position (list): x, y coordinates of the position to check.
+            board (list): Previously played queens.
+
+        Returns:
+            True or False if the position is safe to place a queen.
+        """
         [x, y] = position
 
         # Filter outside the board case
-        if x >= self.__N or y >= self.__N or x <= 0 or y <= 0:
+        if x >= self.__N or y >= self.__N or x < 0 or y < 0:
             return False
 
         # Filter Queen Attacked by previously played queens.
@@ -31,35 +40,33 @@ class NQueens:
                 return False
 
             # Attacking in diagonal or taken position
-            if abs(queen_x - queen_y) == abs(x - y):
+            if (queen_x - queen_y == x - y) or (queen_x + queen_y == x + y):
                 return False
 
         # Safe Position
         return True
 
     def backtrack(self, board, column):
-
-        if len(board) == self.__N:
+        """Backtracking algorithm to solve the NQueens problem."""
+        if column == self.__N:
             self.solutions.append(board.copy())
             return True
-
-        if column > self.__N:
-            return False
 
         for row in range(self.__N):
             position = [row, column]
             if self.safe_position(position, board):
                 board.append(position)
-                if self.backtrack(board, [row, column + 1]):
-                    return True
+                self.backtrack(board, column + 1)
                 board.pop()
 
         return False
 
     def solve(self):
+        """Solves the NQueens problem."""
         board = []
         self.backtrack(board, 0)
-        print(self.solutions)
+        for solution in self.solutions:
+            print(solution)
 
 
 if __name__ == "__main__":
@@ -79,4 +86,5 @@ if __name__ == "__main__":
         print("N must be at least 4")
         exit(1)
 
-    solutions = NQueens(N).solve()
+    NQueens(N).solve()
+    del NQueens
