@@ -10,7 +10,6 @@ class LockedClass:
     """
     Prevents the user from dynamically creating new instance attributes.
     """
-    __slots__ = ['first_name']
 
     def __setattr__(self, name, value):
         """
