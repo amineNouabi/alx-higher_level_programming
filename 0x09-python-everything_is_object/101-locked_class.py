@@ -12,8 +12,7 @@ class LockedClass:
     """
 
     def __setattr__(self, name, value):
-        """
-        Prevents the user from dynamically creating new instance attribute beside 'first_name'.
+        """Prevents the user from dynamically creating new instance attribute beside 'first_name'.
 
         Args:
             name (str): name of the attribute.
