@@ -48,6 +48,7 @@ class NQueens:
 
     def backtrack(self, board, column):
         """Backtracking algorithm to solve the NQueens problem."""
+
         if column == self.__N:
             self.solutions.append(board.copy())
             return True
