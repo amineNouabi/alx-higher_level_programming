@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 
-Script that lists all states that matches name
+Script that lists all cities from the database
 
 """
 
@@ -14,7 +14,10 @@ if __name__ == "__main__":
         passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
     cursor = connection.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name=%s ORDER BY id ASC", (sys.argv[4],))
+        "SELECT id, cities.name, states.name \
+         FROM cities \
+         INNER JOIN states ON cities.state_id = states.id \
+         ORDER BY cities.id ASC")
     rows = cursor.fetchall()
     for row in rows:
         print(row)
