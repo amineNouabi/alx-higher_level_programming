@@ -22,5 +22,6 @@ if __name__ == "__main__":
         print(row[0], end="")
         if row != rows[-1]:
             print(", ", end="")
+    print()
     cursor.close()
     connection.close()
