@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 
-Script that list first state using SQLAlchemy
+Script that lists all states with a name containing the letter a from the database
 
 """
 
@@ -17,9 +17,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).first()
-    if state:
-        print("{}: {}".format(state.id, state.name))
-    else:
-        print("Nothing")
+    state = session.query(State).filter(
+        State.name.like('%a%')).order_by(State.id)
+    for row in state:
+        print("{}: {}".format(row.id, row.name))
     session.close()
