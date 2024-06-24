@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 
-Script that lists all states with a name containing the letter a from the database
+Script that prints the State object with
+    the name passed as argument from the
 
 """
 
@@ -17,10 +18,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(
-        State.name.like('%a%')).order_by(State.id)
+    state = session.query(State).filter(State.name.like(argv[4]))
     if state is None:
-        print("Nothing")
-    for row in state:
-        print("{}: {}".format(row.id, row.name))
+        print("Not found")
+    else:
+        print(state[0].id)
     session.close()
