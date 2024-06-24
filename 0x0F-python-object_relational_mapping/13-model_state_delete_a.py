@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
 
-Script that prints the State object with
-    the name passed as argument from the
+Script that deletes the State objects with
+    a name containing the letter 'a' from the database
 
 """
 
@@ -18,9 +18,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name == (argv[4],))
-    try:
-        print(states[0].id)
-    except:
-        print("Not found")
+    states = session.query(State).filter(State.name.like('%a%'))
+    for state in states:
+        session.delete(state)
+    session.commit()
     session.close()
