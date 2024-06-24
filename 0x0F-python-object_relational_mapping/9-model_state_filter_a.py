@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 
-Script that lists all states with a name containing the letter a from the database
+Script that lists all states with
+    a name containing the letter a from the database
 
 """
 
