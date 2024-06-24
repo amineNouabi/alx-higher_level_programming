@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """
 
-Script that lists all states using SQLAlchemy
-
+Create a new State object "California" with the City "San Francisco"
 """
 
 from sys import argv
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
@@ -18,7 +17,10 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state, city in session.query(State, City)\
-            .filter(State.id == City.state_id).order_by(City.id):
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    california = State(name='California')
+    san_francisco = City(name='San Francisco')
+    california.cities.append(san_francisco)
+    session.add(california)
+    session.add(san_francisco)
+    session.commit()
     session.close()
