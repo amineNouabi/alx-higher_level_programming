@@ -4,13 +4,12 @@
 
 def find_peak(list_of_integers):
     """Find a peak in a list of unsorted integers"""
-    if not len(list_of_integers):
-        return None
-
     n = len(list_of_integers)
+    if n == 0:
+        return None
     if n == 1:
         return list_of_integers[0]
-    if n == 2:
+    elif n == 2:
         return max(list_of_integers)
 
     middle = n // 2
