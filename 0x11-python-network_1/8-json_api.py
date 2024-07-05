@@ -20,7 +20,7 @@ if __name__ == "__main__":
     try:
         res_json = r.json()
         if "id" in res_json.items() and "name" in res_json.items():
-            print("[{}] <{}>".format(res_json["id"], res_json["name"]))
+            print("[{}] {}".format(res_json["id"], res_json["name"]))
         else:
             print("No result")
     except Exception as e:
