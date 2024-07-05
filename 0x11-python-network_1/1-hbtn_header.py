@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script prints rensponse body of a predefined URL"""
+"""This script reads response header value """
 
 
 if __name__ == "__main__":
