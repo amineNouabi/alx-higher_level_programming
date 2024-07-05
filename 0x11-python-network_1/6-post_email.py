@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-"""This script prints rensponse header of a predefined URL using requests"""
+"""This script post an email to the URL"""
 
 
 if __name__ == "__main__":
+    from sys import argv
     import requests
 
-    URL = "https://alx-intranet.hbtn.io/status"
-    r = requests.post(URL, data=)
+    URL = argv[1]
+    data = {
+        "email": argv[2]
+    }
+
+    r = requests.post(URL, data=data)
+    print(r.text)
