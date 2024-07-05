@@ -3,9 +3,7 @@
 
 
 if __name__ == "__main__":
-    from sys import argv
     import requests
 
-    URL = argv[1]
-    r = requests.get(URL)
-    print(r.headers["X-Request-Id"])
+    URL = "https://alx-intranet.hbtn.io/status"
+    r = requests.post(URL, data=)
