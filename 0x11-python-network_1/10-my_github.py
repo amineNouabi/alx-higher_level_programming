@@ -1,27 +1,24 @@
 #!/usr/bin/python3
-"""This script prints content of response
-    if status is success otherwise prints error code"""
+"""Get """
 
 
 if __name__ == "__main__":
     from sys import argv
-    from requests import post
+    from requests import get
 
-    URL = "http://0.0.0.0:5000/search_user"
-    q = ""
+    URL = "https://api.github.com/user"
+    username = argv[1]
+    token = argv[2]
+
+    headers = {
+        "Authorization": "Bearer {}".format(token),
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
+
     try:
-        q = argv[1]
-    except IndexError:
-        pass
-
-    data = {"q": q}
-    r = post(URL, data=data)
-
-    try:
-        res_json = r.json()
-        if "id" in res_json.items() and "name" in res_json.items():
-            print("[{}] {}".format(res_json["id"], res_json["name"]))
-        else:
-            print("No result")
-    except Exception as e:
-        print("Not a valid JSON")
+        r = get(URL, headers=headers)
+        user = r.json()
+        print(user["id"])
+    except Exception:
+        print("None")
