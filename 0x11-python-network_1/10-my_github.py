@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Get """
+"""Get user id from github API using Auth Token"""
 
 
 if __name__ == "__main__":
