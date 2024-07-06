@@ -16,8 +16,6 @@ if __name__ == "__main__":
 
     data = {"q": q}
     r = post(URL, data=data)
-    print(r.text)
-    print(r.headers["Content-Type"])
 
     if r.status_code == 204:
         print("No result")
