@@ -22,6 +22,6 @@ if __name__ == "__main__":
         if len(commits) > 10:
             commits = commits[:10]
         for commit in commits:
-            print(commit["sha"] + ": " + commit["commit"]["author"]["name"])
+            print(commit["sha"] + ": " + commit["commit"]["committer"]["name"])
     except Exception:
         pass
