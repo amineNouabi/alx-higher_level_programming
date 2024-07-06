@@ -16,12 +16,20 @@ if __name__ == "__main__":
 
     data = {"q": q}
     r = post(URL, data=data)
+    print(r.text)
+    print(r.headers["Content-Type"])
 
-    try:
-        res_json = r.json()
-        if "id" in res_json.items() and "name" in res_json.items():
-            print("[{}] {}".format(res_json["id"], res_json["name"]))
-        else:
-            print("No result")
-    except Exception as e:
+    if r.status_code == 204:
+        print("No result")
+    elif r.headers["Content-Type"] != "application/json":
         print("Not a valid JSON")
+    else:
+        try:
+            res_json = r.json()
+            res_keys = res_json.keys()
+            if "id" in res_keys and "name" in res_keys:
+                print("[{}] {}".format(res_json["id"], res_json["name"]))
+            else:
+                print("No result")
+        except:
+            print("Not a valid JSON")
