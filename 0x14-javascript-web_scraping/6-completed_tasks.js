@@ -20,8 +20,9 @@ request(url, (error, response, body) => {
 
   todos.forEach(todo => {
     const userId = parseInt(todo.userId, 10);
-    if (!(userId in usersCompleted)) { usersCompleted[userId] = 0; }
-    if (todo.completed) { usersCompleted[userId]++; }
+    if (todo.completed) {
+      if (!(userId in usersCompleted)) { usersCompleted[userId] = 1; } else { usersCompleted[userId]++; }
+    }
   });
 
   console.log(usersCompleted);
